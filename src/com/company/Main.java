@@ -63,7 +63,7 @@ public class Main {
             }
         } */
 
-        int dayOffWeek = 1;
+       /* int dayOffWeek = 5;
         String schedule;
 
         switch(dayOffWeek){
@@ -78,7 +78,80 @@ public class Main {
             case 5: schedule = "Game night after work";
             default: schedule = "Free!";
         }
-        System.out.println(schedule);
+        System.out.println(schedule); */
+
+       // playMusic();
+       /* int score = rollDice();
+
+        System.out.println("score: " + score); */
+        //double score = absoluteValue(3);
+        //System.out.println("score: " + score);
+
+        printTemperature(60);
+
+    }
+
+    static boolean playButton = true;
+
+    public static void playMusic() {
+        if (playButton) {
+            System.out.println("music is playing");
+        } else {
+            System.out.println("music is not playing");
         }
     }
 
+    public double makeChange(double itemCost, double dollarsProvided) {
+
+        double change;
+        change = dollarsProvided - itemCost;
+        return change;
+            }
+
+    public static int rollDice() {
+
+        double randomNumber = ((Math.random() * 6) + 1);
+
+        int score = (int) randomNumber; // CASTING
+
+        return score;
+    }
+
+    public static double absoluteValue(double argument){
+        double output;
+        if(argument < 0){
+            output = argument*(-1);
+        }
+        else{
+            output = argument;
+        }
+        return output;
+    }
+
+    public static String namTagText(String name){
+        String tag;
+        tag = "Hello, my name is " + name;
+        return tag;
+    }
+
+    public static double fahrenheitToCelsius(double F){
+    double C = ((F - 32)*5)/9;
+    return C;
+    }
+
+    public static void printTemperature(double F){
+        System.out.println("F: " + F);
+        System.out.println("C: " + fahrenheitToCelsius(F));
+    }
+
+    public static int monopolyRoll(){
+        int firstRoll = rollDice();
+        int secondRoll = rollDice();
+        if(firstRoll != secondRoll){
+            return firstRoll + secondRoll;
+        }
+        else{
+            return firstRoll + secondRoll + rollDice() + rollDice();
+        }
+    }
+}
