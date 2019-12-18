@@ -92,10 +92,15 @@ public class Main {
        // int score = keepRolling();
        // System.out.println("score :" + score);
 
-        int total = thePyramid(45);
-        System.out.println("number of blocks needed: " + total);
+      //  int total = thePyramid(45);
+       // System.out.println("number of blocks needed: " + total);
+
+       String [] names = {"Adam", "Monika", "John"};
+       String longestName = findLongestName(names);
+       System.out.println(longestName);
 
     }
+
 
     static boolean playButton = true;
 
@@ -186,6 +191,22 @@ public class Main {
             total = total + i * i;
         }
         return total;
+    }
+
+    public static String findLongestName(String [] names){
+
+        int size = names.length;
+
+        String longestName = names[0];
+
+        for(int i = 1; i < size; i++){
+
+            if(names[i].length() > longestName.length()){
+
+                longestName = names[i];
+            }
+        }
+        return longestName;
     }
 
 }
