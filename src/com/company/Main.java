@@ -95,9 +95,16 @@ public class Main {
       //  int total = thePyramid(45);
        // System.out.println("number of blocks needed: " + total);
 
-       String [] names = {"Adam", "Monika", "John"};
+       /* String [] names = {"Adam", "Monika", "John"};
        String longestName = findLongestName(names);
-       System.out.println(longestName);
+       System.out.println(longestName); */
+
+      // int total = factorial(1);
+      //  System.out.println(total);
+
+        String[] sentence = {"Learning", "Java", "is", "fun."};
+        int indexOfWordJava = indexOfFirstOccurrence(sentence, "Java");
+        System.out.println(indexOfWordJava);
 
     }
 
@@ -207,6 +214,33 @@ public class Main {
             }
         }
         return longestName;
+    }
+
+    public static int factorial(int n) {
+
+        int total = 1;
+
+        for(int i = 1; i <= n; i++){
+            total = total * i;
+        }
+        return total;
+    }
+
+    public static int indexOfFirstOccurrence(String[] stringArray, String target)
+    {
+        int size = stringArray.length;
+        String wantedString = target;
+        int index = 0;
+        for(int i = 0; i < size; i++){
+            if(wantedString.equals(stringArray[i])){
+                index = i;
+                break;
+            }
+            else{
+                index = -1;
+            }
+        }
+return index;
     }
 
 }
