@@ -87,7 +87,7 @@ public class Main {
         //double score = absoluteValue(3);
         //System.out.println("score: " + score);
 
-        printTemperature(60);
+        printTemperature(75);
 
     }
 
