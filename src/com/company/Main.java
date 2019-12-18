@@ -87,7 +87,13 @@ public class Main {
         //double score = absoluteValue(3);
         //System.out.println("score: " + score);
 
-        printTemperature(75);
+       // printTemperature(75);
+
+       // int score = keepRolling();
+       // System.out.println("score :" + score);
+
+        int total = thePyramid(45);
+        System.out.println("number of blocks needed: " + total);
 
     }
 
@@ -154,4 +160,32 @@ public class Main {
             return firstRoll + secondRoll + rollDice() + rollDice();
         }
     }
+
+    public static int keepRolling() {
+        int dice1 = rollDice();
+        int dice2 = rollDice();
+        int dice3 = rollDice();
+        int dice4 = rollDice();
+        int dice5 = rollDice();
+        int count = 1;
+        while (!(dice1 == dice2 && dice2 == dice3 && dice3 == dice4 && dice4 == dice5)){
+            dice1 = rollDice();
+            dice2 = rollDice();
+            dice3 = rollDice();
+            dice4 = rollDice();
+            dice5 = rollDice();
+            count = count + 1;
+        }
+        return count;
+    }
+
+    public static int thePyramid(int levels){
+
+        int total = 0;
+        for(int i = 1; i <= levels; i++){
+            total = total + i * i;
+        }
+        return total;
+    }
+
 }
