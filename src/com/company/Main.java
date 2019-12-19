@@ -102,9 +102,12 @@ public class Main {
       // int total = factorial(1);
       //  System.out.println(total);
 
-        String[] sentence = {"Learning", "Java", "is", "fun."};
+      /*  String[] sentence = {"Learning", "Java", "is", "fun."};
         int indexOfWordJava = indexOfFirstOccurrence(sentence, "Java");
-        System.out.println(indexOfWordJava);
+        System.out.println(indexOfWordJava); */
+
+      //int years = yearsTilOneMillion(200000);
+       // System.out.println(years);
 
     }
 
@@ -243,4 +246,16 @@ public class Main {
 return index;
     }
 
+    public static int yearsTilOneMillion(double initialBalance) {
+
+        double total = initialBalance;
+        int years = 0;
+
+        while(total < 1000000) {
+
+            total = total + total * 5 / 100;
+            years++;
+        }
+        return years;
+    }
 }
