@@ -189,8 +189,13 @@ public class Main {
         }
         else{
             int total = 0;
-            int streak = 1;
+            int streak = 0;
             while (firstRoll == secondRoll) {
+                streak++;
+                if(streak == 3){
+                    System.out.println("Double 3 times in a row. You going to jail!");
+                    break;
+                }
                 System.out.println("first roll: " + firstRoll);
                 System.out.println("second roll: " + secondRoll);
                 System.out.println("It's a double! Streak " + streak);
@@ -205,7 +210,7 @@ public class Main {
                     System.out.println("total: " + total);
                     break;
                 }
-                streak++;
+
             }
             return total;
         }
