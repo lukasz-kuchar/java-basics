@@ -1,5 +1,7 @@
 package com.company;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -112,9 +114,11 @@ public class Main {
         //String[] weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
         //printInReverse(weekdays);
 
-        int[] test = new int[0];
+       /* int[] test = new int[0];
         int range = findRange(test);
-        System.out.println(range);
+        System.out.println(range); */
+
+       monopolyRoll();
 
     }
 
@@ -174,10 +178,36 @@ public class Main {
     public static int monopolyRoll() {
         int firstRoll = rollDice();
         int secondRoll = rollDice();
-        if (firstRoll != secondRoll) {
-            return firstRoll + secondRoll;
-        } else {
-            return firstRoll + secondRoll + rollDice() + rollDice();
+        if (firstRoll != secondRoll){
+
+            System.out.println("first roll: " + firstRoll);
+            System.out.println("second roll: " + secondRoll);
+            int total = firstRoll + secondRoll;
+            System.out.println("total: " + total);
+            return total;
+
+        }
+        else{
+            int total = 0;
+            int streak = 1;
+            while (firstRoll == secondRoll) {
+                System.out.println("first roll: " + firstRoll);
+                System.out.println("second roll: " + secondRoll);
+                System.out.println("It's a double! Streak " + streak);
+                total = total + firstRoll + secondRoll;
+                System.out.println("total: " + total);
+                firstRoll = rollDice();
+                secondRoll = rollDice();
+               if(firstRoll != secondRoll){
+                    System.out.println("first roll: " + firstRoll);
+                    System.out.println("second roll: " + secondRoll);
+                    total = total + firstRoll + secondRoll;
+                    System.out.println("total: " + total);
+                    break;
+                }
+                streak++;
+            }
+            return total;
         }
     }
 
