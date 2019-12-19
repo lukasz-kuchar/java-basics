@@ -80,38 +80,41 @@ public class Main {
         }
         System.out.println(schedule); */
 
-       // playMusic();
+        // playMusic();
        /* int score = rollDice();
 
         System.out.println("score: " + score); */
         //double score = absoluteValue(3);
         //System.out.println("score: " + score);
 
-       // printTemperature(75);
+        // printTemperature(75);
 
-       // int score = keepRolling();
-       // System.out.println("score :" + score);
+        // int score = keepRolling();
+        // System.out.println("score :" + score);
 
-      //  int total = thePyramid(45);
-       // System.out.println("number of blocks needed: " + total);
+        //  int total = thePyramid(45);
+        // System.out.println("number of blocks needed: " + total);
 
        /* String [] names = {"Adam", "Monika", "John"};
        String longestName = findLongestName(names);
        System.out.println(longestName); */
 
-      // int total = factorial(1);
-      //  System.out.println(total);
+        // int total = factorial(1);
+        //  System.out.println(total);
 
       /*  String[] sentence = {"Learning", "Java", "is", "fun."};
         int indexOfWordJava = indexOfFirstOccurrence(sentence, "Java");
         System.out.println(indexOfWordJava); */
 
-      //int years = yearsTilOneMillion(200000);
-       // System.out.println(years);
+        //int years = yearsTilOneMillion(200000);
+        // System.out.println(years);
 
-        String[] weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+        //String[] weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+        //printInReverse(weekdays);
 
-        printInReverse(weekdays);
+        int[] test = new int[0];
+        int range = findRange(test);
+        System.out.println(range);
 
     }
 
@@ -131,7 +134,7 @@ public class Main {
         double change;
         change = dollarsProvided - itemCost;
         return change;
-            }
+    }
 
     public static int rollDice() {
 
@@ -142,40 +145,38 @@ public class Main {
         return score;
     }
 
-    public static double absoluteValue(double argument){
+    public static double absoluteValue(double argument) {
         double output;
-        if(argument < 0){
-            output = argument*(-1);
-        }
-        else{
+        if (argument < 0) {
+            output = argument * (-1);
+        } else {
             output = argument;
         }
         return output;
     }
 
-    public static String namTagText(String name){
+    public static String namTagText(String name) {
         String tag;
         tag = "Hello, my name is " + name;
         return tag;
     }
 
-    public static double fahrenheitToCelsius(double F){
-    double C = ((F - 32)*5)/9;
-    return C;
+    public static double fahrenheitToCelsius(double F) {
+        double C = ((F - 32) * 5) / 9;
+        return C;
     }
 
-    public static void printTemperature(double F){
+    public static void printTemperature(double F) {
         System.out.println("F: " + F);
         System.out.println("C: " + fahrenheitToCelsius(F));
     }
 
-    public static int monopolyRoll(){
+    public static int monopolyRoll() {
         int firstRoll = rollDice();
         int secondRoll = rollDice();
-        if(firstRoll != secondRoll){
+        if (firstRoll != secondRoll) {
             return firstRoll + secondRoll;
-        }
-        else{
+        } else {
             return firstRoll + secondRoll + rollDice() + rollDice();
         }
     }
@@ -187,7 +188,7 @@ public class Main {
         int dice4 = rollDice();
         int dice5 = rollDice();
         int count = 1;
-        while (!(dice1 == dice2 && dice2 == dice3 && dice3 == dice4 && dice4 == dice5)){
+        while (!(dice1 == dice2 && dice2 == dice3 && dice3 == dice4 && dice4 == dice5)) {
             dice1 = rollDice();
             dice2 = rollDice();
             dice3 = rollDice();
@@ -198,24 +199,24 @@ public class Main {
         return count;
     }
 
-    public static int thePyramid(int levels){
+    public static int thePyramid(int levels) {
 
         int total = 0;
-        for(int i = 1; i <= levels; i++){
+        for (int i = 1; i <= levels; i++) {
             total = total + i * i;
         }
         return total;
     }
 
-    public static String findLongestName(String [] names){
+    public static String findLongestName(String[] names) {
 
         int size = names.length;
 
         String longestName = names[0];
 
-        for(int i = 1; i < size; i++){
+        for (int i = 1; i < size; i++) {
 
-            if(names[i].length() > longestName.length()){
+            if (names[i].length() > longestName.length()) {
 
                 longestName = names[i];
             }
@@ -227,27 +228,25 @@ public class Main {
 
         int total = 1;
 
-        for(int i = 1; i <= n; i++){
+        for (int i = 1; i <= n; i++) {
             total = total * i;
         }
         return total;
     }
 
-    public static int indexOfFirstOccurrence(String[] stringArray, String target)
-    {
+    public static int indexOfFirstOccurrence(String[] stringArray, String target) {
         int size = stringArray.length;
         String wantedString = target;
         int index = 0;
-        for(int i = 0; i < size; i++){
-            if(wantedString.equals(stringArray[i])){
+        for (int i = 0; i < size; i++) {
+            if (wantedString.equals(stringArray[i])) {
                 index = i;
                 break;
-            }
-            else{
+            } else {
                 index = -1;
             }
         }
-return index;
+        return index;
     }
 
     public static int yearsTilOneMillion(double initialBalance) {
@@ -255,7 +254,7 @@ return index;
         double total = initialBalance;
         int years = 0;
 
-        while(total < 1000000) {
+        while (total < 1000000) {
 
             total = total + total * 5 / 100;
             years++;
@@ -266,8 +265,33 @@ return index;
     public static void printInReverse(String[] stringArray) {
 
         int size = stringArray.length;
-        for(int i = 1; i <= size; i++) {
+        for (int i = 1; i <= size; i++) {
             System.out.println(stringArray[size - i]);
         }
+    }
+
+    public static int findRange(int[] intArray) {
+
+        int size = intArray.length;
+        int range = 0;
+
+        if (size == 0) {
+
+            return -1;
+
+        } else {
+            int max = intArray[0];
+            int min = intArray[0];
+            for(int i = 1; i < size; i++){
+                if(intArray[i]>max){
+                    max = intArray[i];
+                }
+                if(intArray[i]<min){
+                    min = intArray[i];
+                }
+            }
+            return max - min;
+        }
+
     }
 }
