@@ -109,6 +109,10 @@ public class Main {
       //int years = yearsTilOneMillion(200000);
        // System.out.println(years);
 
+        String[] weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+
+        printInReverse(weekdays);
+
     }
 
 
@@ -257,5 +261,13 @@ return index;
             years++;
         }
         return years;
+    }
+
+    public static void printInReverse(String[] stringArray) {
+
+        int size = stringArray.length;
+        for(int i = 1; i <= size; i++) {
+            System.out.println(stringArray[size - i]);
+        }
     }
 }
